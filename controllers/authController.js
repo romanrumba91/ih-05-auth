@@ -135,3 +135,19 @@ exports.loginForm = async (req, res) => {
 
 }
 
+exports.logout = async (req, res) => {
+
+	req.session.destroy((error) => {
+
+		if(error){
+			console.log(error)
+			return
+		}
+
+		res.redirect("/")
+
+
+	})
+
+}
+
